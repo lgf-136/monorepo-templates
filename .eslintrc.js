@@ -1,6 +1,7 @@
 const path = require('path');
 module.exports = {
   extends: [ path.resolve(__dirname, './config/eslint/react-ts.config') ],
+
   rules: {
     '@typescript-eslint/no-non-null-assertion': 0,
     'func-style': 0,
@@ -16,8 +17,11 @@ module.exports = {
       },
     ],
   },
+
   settings: {},
+
   plugins: [],
+
   overrides: [],
   // ignorePatterns: [ 'src/**/*.d.ts' ],
 };
