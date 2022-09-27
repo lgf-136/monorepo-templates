@@ -2,5 +2,9 @@
   "./**/*.{ts,js,tsx,jsx,vue}": [
     "eslint --fix",
     "git add ."
+  ],
+  "./**/*.{css,postcss,less,scss,sass,vue,html}": [
+    "stylelint --fix",
+    "git add ."
   ]
 }

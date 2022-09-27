@@ -9,7 +9,7 @@ pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescri
 ## stylelint
 
 ```
-pnpm add -D -w stylelint
+pnpm add -D -w stylelint stylelint-config-standard stylelint-config-recess-order stylelint-config-standard-scss postcss-html postcss-less postcss-scss
 ```
 
 ## git-cz + husky + commitlint + release log
