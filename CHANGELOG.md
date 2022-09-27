@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/lgf-136/monorepo-templates/compare/v0.0.2...v0.0.3) (2022-09-27)
+
+
+### Features
+
+* 🎸 add postcss ([#4](https://github.com/lgf-136/monorepo-templates/issues/4)) ([7cbc89a](https://github.com/lgf-136/monorepo-templates/commit/7cbc89a2d64b4b3a89a4ba0a95708ae47d8644ea))
+* 🎸 add stylelint ([12c97f2](https://github.com/lgf-136/monorepo-templates/commit/12c97f2aa8fb383216cf4066fb95ec3729b22199))
+* 🎸 add utools-plugin-react-ts-template ([5d79857](https://github.com/lgf-136/monorepo-templates/commit/5d7985748912863ebcf2fc5ee482c2085db0354d))
+
 ### 0.0.2 (2022-09-27)
 
 
