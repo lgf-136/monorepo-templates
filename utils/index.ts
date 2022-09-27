@@ -1,2 +1,2 @@
-const utils: string = "utils";
+const utils = 'utils';
 export default { utils };

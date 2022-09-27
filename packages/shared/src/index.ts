@@ -1,2 +1,2 @@
-const corePackage: string = "corePackage";
+const corePackage = 'corePackage';
 export default { corePackage };

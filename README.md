@@ -2,6 +2,8 @@
 
 monorepo-templates
 
+pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser vue-eslint-parser eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-vue
+
 ## 子模块的添加
 
 添加子模块非常简单，命令如下：

@@ -1,11 +1,11 @@
-import "./style.css";
-import typescriptLogo from "./typescript.svg";
-import { setupCounter } from "./counter";
-import * as api from "@lgf136/api-demo";
-import utils from "@lgf136/utils";
+import './style.css';
+import typescriptLogo from './typescript.svg';
+import { setupCounter } from './counter';
+import * as api from '@lgf136/api-demo';
+import utils from '@lgf136/utils';
 console.log(api);
 console.log(utils.utils);
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -23,4 +23,4 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
