@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-
+import utils from '@lgf136/utils';
 function App() {
   const [ count, setCount ] = useState(0);
-
+  console.log(utils.utils);
   return (
     <div className="App">
       <div>
