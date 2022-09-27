@@ -12,6 +12,12 @@ pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescri
 pnpm add -D -w stylelint stylelint-config-standard stylelint-config-recess-order stylelint-config-standard-scss postcss-html postcss-less postcss-scss
 ```
 
+## postcss + autoprefixer
+
+```
+pnpm add -D -w postcss postcss-cli postcss-pxtorem postcss-preset-env autoprefixer
+```
+
 ## git-cz + husky + commitlint + release log
 
 ```
