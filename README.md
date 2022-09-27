@@ -30,6 +30,20 @@ npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
+## git tag
+
+git tag -a v0.03-init -m "release first full function version"
+
+git push --tags
+
+## git pull and git push
+
+git push --all origin
+
+git fetch --all
+
+git pull --all
+
 ## 子模块的添加
 
 添加子模块非常简单，命令如下：
