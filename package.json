@@ -17,6 +17,7 @@
     "postcss": "npx postcss ./examples/react/src/index.css --dir ./examples/react/dist/ ",
     "dev:demo1": "cd projects/vite-project && pnpm install && pnpm dev",
     "pull": "git pull && cd .vscode && git pull && cd .. && cd config && git pull && cd ..",
+    "clean": "node ./clean_node_modules.js",
     "release": "standard-version"
   },
   "devDependencies": {
