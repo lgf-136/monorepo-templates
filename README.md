@@ -8,15 +8,16 @@ pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescri
 
 ## stylelint
 
-## git-cz + husky + commitlint
+## git-cz + husky + commitlint + release log
 
 ```
 pnpm add -D -w git-cz
 pnpm add -D -w  @commitlint/cli @commitlint/config-conventional commitlint
-pnpm add -D -w husky lint-staged
+pnpm add -D -w husky lint-staged standard-version
 
-npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
-npx husky add .husky/pre-commit "pnpm run lint-staged"
+
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 ## 子模块的添加
