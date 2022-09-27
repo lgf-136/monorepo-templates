@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm install
-      - run: npm run lint
+      - run: npm run pull && npm run lint
       - run: npm run build --if-present
 
 # 如何构建依赖关系图： npm install --> eslint + stylelint --> npm build
