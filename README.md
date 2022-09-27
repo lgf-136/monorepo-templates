@@ -2,7 +2,22 @@
 
 monorepo-templates
 
+## eslint
+
 pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser vue-eslint-parser eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-vue
+
+## stylelint
+
+## git-cz + husky + commitlint
+
+```
+pnpm add -D -w git-cz
+pnpm add -D -w  @commitlint/cli @commitlint/config-conventional commitlint
+pnpm add -D -w husky lint-staged
+
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+npx husky add .husky/pre-commit "pnpm run lint-staged"
+```
 
 ## 子模块的添加
 
