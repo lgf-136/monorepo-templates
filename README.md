@@ -8,6 +8,10 @@ pnpm install -D -w eslint  typescript @typescript-eslint/eslint-plugin @typescri
 
 ## stylelint
 
+```
+pnpm add -D -w stylelint
+```
+
 ## git-cz + husky + commitlint + release log
 
 ```
