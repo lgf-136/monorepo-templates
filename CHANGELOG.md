@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/lgf-136/monorepo-templates/compare/v0.0.3...v0.0.4) (2022-09-27)
+
+
+### Features
+
+* 🎸 add clean_node_modules script ([b5de14c](https://github.com/lgf-136/monorepo-templates/commit/b5de14c3a2d69374faadc0b62e37a0aa1dc0e5a7))
+* 🎸 add github actions ([88c071c](https://github.com/lgf-136/monorepo-templates/commit/88c071c894b30ad823e76f23d395f22e2405c01d))
+* 🎸 change utils to submodule ([00c2e09](https://github.com/lgf-136/monorepo-templates/commit/00c2e09a4f74e83c53c9c7aa63e61952b8aa8247))
+
+
+### Bug Fixes
+
+* 🐛 add clean_node_modules script ([f20baa1](https://github.com/lgf-136/monorepo-templates/commit/f20baa13e0fec63714b473492169249f9a1f8035))
+* 🐛 add package script ([c53d339](https://github.com/lgf-136/monorepo-templates/commit/c53d339f453bacb6736851acadc9c5a43fd7f297))
+* 🐛 change eslintrc ([40331dd](https://github.com/lgf-136/monorepo-templates/commit/40331dd724f39994d49224ca18c86d1badac9aa4))
+* 🐛 fix ([9daf56d](https://github.com/lgf-136/monorepo-templates/commit/9daf56de91cf4751c4288f863ec4d9d34926778c))
+* 🐛 fix and tested pass github actions ([#6](https://github.com/lgf-136/monorepo-templates/issues/6)) ([7cfb020](https://github.com/lgf-136/monorepo-templates/commit/7cfb020873a895d35744798982a4e19bfa66ec45))
+
 ### [0.0.3](https://github.com/lgf-136/monorepo-templates/compare/v0.0.2...v0.0.3) (2022-09-27)
 
 
