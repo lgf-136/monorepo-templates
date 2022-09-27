@@ -1,6 +1,6 @@
-
+const path = require('path');
 module.exports = {
-  extends: [ './config/eslint/react-ts.config' ],
+  extends: [ path.resolve(__dirname, './config/eslint/react-ts.config') ],
   rules: {
     '@typescript-eslint/no-non-null-assertion': 0,
     'func-style': 0,
