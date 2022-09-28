@@ -11,6 +11,7 @@ const viteServeConfig = require('./config/vite/vite.serve.config');
 const viteBuildConfig = require('./config/vite/vite.build.config');
 
 import utoolsPlugin from './config/utools';
+import chromePlugin from './config/chrome';
 // pnpm create monkey    to generate tampermonkey template with vite
 const tampermonkeyPluginConfig = require('./config/tampermonkey/react-ts');
 // import viteConfig from '@lgf136/config'; // 不能导入模块？？？
@@ -54,6 +55,8 @@ const utoolsPluginConfig = defineConfig(({ command = '', mode = 'development', u
 
 // module.exports = utoolsPluginConfig;
 
+module.exports = chromePlugin;
+
 // build tampermonkey plugin
 
-module.exports = tampermonkeyPluginConfig;
+// module.exports = tampermonkeyPluginConfig;
