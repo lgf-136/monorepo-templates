@@ -3,6 +3,7 @@ packages:
   - "projects/*"
   - "packages/*"
   - "examples/*"
+  - "config/**"
   - "utils/**"
   - "website"
   - "e2e"
