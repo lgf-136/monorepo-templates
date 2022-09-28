@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
+import viteLogo from './assets/vite.svg';
 import './App.css';
 import utils from '@lgf136/utils';
 function App() {
@@ -8,8 +9,11 @@ function App() {
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+        {/* <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="./vite.svg" className="logo" alt="Vite logo" />
+        </a> */}
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
+          <img src={viteLogo} className="logo react" alt="Vite logo" />
         </a>
         <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />

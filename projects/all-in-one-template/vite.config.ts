@@ -1,14 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-var-requires */
 
 const { defineConfig, loadEnv } = require('vite');
 const path = require('path');
-import utools from 'vite-plugin-utools';
+// import utools from 'vite-plugin-utools';
 
-const viteBaseConfig = require('./config/vite.base.config');
-const viteServeConfig = require('./config/vite.serve.config');
-const viteBuildConfig = require('./config/vite.build.config');
+const viteBaseConfig = require('./config/vite/vite.base.config');
+const viteServeConfig = require('./config/vite/vite.serve.config');
+const viteBuildConfig = require('./config/vite/vite.build.config');
+
+import utoolsPlugin from './config/utools';
+// pnpm create monkey    to generate tampermonkey template with vite
+const tampermonkeyPluginConfig = require('./config/tampermonkey/react-ts');
+// import viteConfig from '@lgf136/config'; // 不能导入模块？？？
 
 // 使用策略模式来加载不同的配置文件
 const configResover: { [key: string]: Function } = {
@@ -37,21 +42,7 @@ const envResolver: { [key: string]: Function } = {
   },
 };
 
-const utoolsPlugin = utools({
-  external: 'uTools',
-  preload: {
-    path: './utools/preload.ts',
-    watch: true,
-    name: 'window.preload',
-  },
-  buildUpx: {
-    pluginPath: './utools/plugin.json',
-    outDir: './dist/upx',
-    outName: '[pluginName]_[version].upx',
-  },
-});
-
-module.exports = defineConfig(({ command = '', mode = 'development', utoolsBuildFlag = true }) => {
+const utoolsPluginConfig = defineConfig(({ command = '', mode = 'development', utoolsBuildFlag = true }) => {
   const env: any = envResolver[mode]();
   const config = configResover[command](env);
   if (utoolsBuildFlag) {
@@ -59,3 +50,10 @@ module.exports = defineConfig(({ command = '', mode = 'development', utoolsBuild
   }
   return config;
 });
+// build utools plugin
+
+// module.exports = utoolsPluginConfig;
+
+// build tampermonkey plugin
+
+module.exports = tampermonkeyPluginConfig;

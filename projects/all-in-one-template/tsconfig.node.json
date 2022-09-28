@@ -2,13 +2,13 @@
   "compilerOptions": {
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "vite.config.ts"
+    "vite.config.ts",
+    "./config/*/*.ts"
   ]
 }
