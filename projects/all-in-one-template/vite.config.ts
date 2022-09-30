@@ -53,9 +53,9 @@ const utoolsPluginConfig = defineConfig(({ command = '', mode = 'development', u
 });
 // build utools plugin
 
-// module.exports = utoolsPluginConfig;
+module.exports = utoolsPluginConfig;
 
-module.exports = chromePlugin;
+// module.exports = chromePlugin;
 
 // build tampermonkey plugin
 

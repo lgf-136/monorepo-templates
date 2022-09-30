@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 import './App.css';
 import utils from '@lgf136/utils';
 function App() {
   const [ count, setCount ] = useState(0);
-  console.log(utils.utils);
+  console.log(utils.utils, 'lgf');
+  useEffect(() => {
+    console.log('bilibili');
+  }, []);
   return (
+
     <div className="App">
       <div>
         {/* <a href="https://vitejs.dev" target="_blank" rel="noreferrer">

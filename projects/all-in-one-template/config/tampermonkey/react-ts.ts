@@ -11,7 +11,7 @@ export default defineConfig({
       userscript: {
         icon: 'https://vitejs.dev/logo.svg',
         namespace: 'npm/vite-plugin-monkey',
-        match: [ 'https://segmentfault.com/' ],
+        match: [ 'https://www.bilibili.com/video/*' ],
       },
       build: {
         externalGlobals: {
