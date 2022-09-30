@@ -5,7 +5,7 @@ import copy from 'rollup-plugin-copy';
 // import styleImport from 'vite-plugin-style-import';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+module.exports = defineConfig({
   base: './',
   resolve: {
     alias: {

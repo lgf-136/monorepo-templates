@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import monkey from 'vite-plugin-monkey';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [
     monkey({
       entry: 'src/main.ts',

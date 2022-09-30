@@ -2,7 +2,7 @@
 import './index.scss';
 import { initContentWithHtml } from './initContent';
 
-import { EditorContent, useEditor } from '@tiptap/react';
+import { EditorContent, ReactNodeViewRenderer, useEditor } from '@tiptap/react';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import StarterKit from '@tiptap/starter-kit';
 import Document from '@tiptap/extension-document';
@@ -35,6 +35,17 @@ import ToolBar from './ToolBar';
 import BubbleMenus from './BubbleMenu';
 import FloatingMenus from './FloatingMenu';
 
+import CodeBlockComponent from './CodeBlockComponent/CodeBlockComponent';
+import { lowlight } from 'lowlight';
+import css from 'highlight.js/lib/languages/css';
+import js from 'highlight.js/lib/languages/javascript';
+import ts from 'highlight.js/lib/languages/typescript';
+import html from 'highlight.js/lib/languages/xml';
+lowlight.registerLanguage('html', html);
+lowlight.registerLanguage('css', css);
+lowlight.registerLanguage('js', js);
+lowlight.registerLanguage('ts', ts);
+
 const limit = 99999999999;
 export default () => {
   const editor = useEditor({
@@ -65,6 +76,13 @@ export default () => {
       // Highlight,
       Highlight.configure({ multicolor: true }),
       Code,
+      CodeBlockLowlight
+        .extend({
+          addNodeView() {
+            return ReactNodeViewRenderer(CodeBlockComponent);
+          },
+        })
+        .configure({ lowlight }),
       Typography,
       Table.configure({
         resizable: true,

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import monkey from 'vite-plugin-monkey';
 
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [
     solidPlugin(),
     monkey({

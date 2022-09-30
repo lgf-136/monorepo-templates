@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable multiline-comment-style */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { defineConfig } = require('vite');
 const react = require('@vitejs/plugin-react');
@@ -121,6 +123,17 @@ module.exports = defineConfig({
         assetFileNames: 'assets/[name].[hash].[ext]',
       },
     },
+    // (!) Some chunks are larger than 500 KiB after minification. 不起作用？？？
+    // chunkSizeWarningLimit: 500,
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks(id:string) {
+    //       if (id.includes('node_modules')) {
+    //         return id.toString().split('node_modules/')[1].split('/')[0].toString();
+    //       }
+    //     },
+    //   },
+    // },
     assetsDir: 'assets',
     outDir: 'dist',
     // 每次构建之前先删除dist目录

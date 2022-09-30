@@ -3,7 +3,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import monkey from 'vite-plugin-monkey';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [
     svelte(),
     monkey({

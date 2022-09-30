@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import monkey, { cdn } from 'vite-plugin-monkey';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [
     react(),
     monkey({

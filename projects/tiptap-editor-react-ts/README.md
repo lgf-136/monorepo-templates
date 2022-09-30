@@ -7,6 +7,12 @@
 3. [项目工程化实践，简称配置工程师](https://www.bilibili.com/video/BV1KT4y1k7g2/)
 4. [万字长文，我们来好好实践一下前端工程化](https://juejin.cn/post/6990349487268970503)
 
+# tiptap packages
+
+```
+pnpm add @tiptap/react @tiptap/extension-code-block-lowlight @tiptap/extension-document @tiptap/extension-paragraph @tiptap/extension-text lowlight
+```
+
 # commitizen-practice-demo
 
 Vue 项目 commitizen + husky + commitlint，git commit 提交信息规范校验 demo，[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) 实践

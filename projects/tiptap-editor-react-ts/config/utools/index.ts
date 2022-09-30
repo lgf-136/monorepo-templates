@@ -14,4 +14,4 @@ const utoolsPlugin = utools({
   },
 });
 
-export default utoolsPlugin;
+module.exports = utoolsPlugin;

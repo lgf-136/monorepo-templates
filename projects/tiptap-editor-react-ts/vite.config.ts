@@ -1,8 +1,10 @@
+/* eslint-disable multiline-comment-style */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 
 const { defineConfig, loadEnv } = require('vite');
+// Cannot redeclare block-scoped variable 'path'.ts
 const path = require('path');
 // import utools from 'vite-plugin-utools';
 
@@ -10,8 +12,9 @@ const viteBaseConfig = require('./config/vite/vite.base.config');
 const viteServeConfig = require('./config/vite/vite.serve.config');
 const viteBuildConfig = require('./config/vite/vite.build.config');
 
-import utoolsPlugin from './config/utools';
-import chromePlugin from './config/chrome';
+// import utoolsPlugin from './config/utools';
+const utoolsPlugin = require('./config/utools');
+const chromePluginConfig = require('./config/chrome');
 // pnpm create monkey    to generate tampermonkey template with vite
 const tampermonkeyPluginConfig = require('./config/tampermonkey/react-ts');
 // import viteConfig from '@lgf136/config'; // 不能导入模块？？？
@@ -24,7 +27,7 @@ const configResover: { [key: string]: Function } = {
     // 等价于语句： ({...viteBaseConfig,...viteBuildConfig})
   },
   serve: (env: any) => {
-    console.log('dev mode, will load build viteDevConfig');
+    console.log('dev mode, will load serve viteDevConfig');
     // console.log(Object.assign(viteBaseConfig, viteServeConfig(env)));
     return Object.assign(viteBaseConfig, viteServeConfig(env));
   },
@@ -41,22 +44,44 @@ const envResolver: { [key: string]: Function } = {
     // 后面的参数 'VITE_' 便是生产幻境只暴露指定前缀为VITE_开头的配置
     return loadEnv('production', `${process.cwd()}/env`, 'VITE_');
   },
+  utools: () => {
+    console.log('will load utools env');
+    // 后面的参数 'VITE_' 便是生产幻境只暴露指定前缀为VITE_开头的配置
+    return loadEnv('utools', `${process.cwd()}/env`, 'VITE_');
+  },
+  chrome: () => {
+    console.log('will load chrome env');
+    // 后面的参数 'VITE_' 便是生产幻境只暴露指定前缀为VITE_开头的配置
+    return loadEnv('chrome', `${process.cwd()}/env`, 'VITE_');
+  },
+  tampermonkey: () => {
+    console.log('will load tampermonkey env');
+    // 后面的参数 'VITE_' 便是生产幻境只暴露指定前缀为VITE_开头的配置
+    return loadEnv('tampermonkey', `${process.cwd()}/env`, 'VITE_');
+  },
 };
 
-const utoolsPluginConfig = defineConfig(({ command = '', mode = 'development', utoolsBuildFlag = true }) => {
+const buildConfig = defineConfig(({ command = '', mode = 'development' }) => {
+  console.log('command: ', command, 'mode: ', mode);
   const env: any = envResolver[mode]();
-  const config = configResover[command](env);
-  if (utoolsBuildFlag) {
+  let config = configResover[command](env);
+  console.log(env.VITE_PLATFORM);
+  // 如何在 vite中使用 cross-env 包？？
+  // console.log(process.env);
+  if (env.VITE_PLATFORM === 'UTOOLS') {
+    console.log('build utools platform');
     config.plugins = [ ...config.plugins, utoolsPlugin ];
+    console.log(config.plugins);
+  } else if (env.VITE_PLATFORM === 'CHROME') {
+    console.log('build chrome platform');
+    config = Object.assign(chromePluginConfig, {});
+  } else if (env.VITE_PLATFORM === 'TAMPERMONKEY') {
+    console.log('build tampermonkey platform');
+    config = Object.assign(tampermonkeyPluginConfig, {});
   }
   return config;
 });
-// build utools plugin
 
-module.exports = utoolsPluginConfig;
-
-// module.exports = chromePlugin;
-
-// build tampermonkey plugin
+export default buildConfig;
 
 // module.exports = tampermonkeyPluginConfig;
