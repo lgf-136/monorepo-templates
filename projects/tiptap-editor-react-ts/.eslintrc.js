@@ -3,7 +3,9 @@ module.exports = {
   extends: [ '../../config/eslint/react-ts.config' ],
   rules: {
     '@typescript-eslint/no-var-requires': [ 0 ],
-    complexity: [ 'error', { max: 20 } ],
+    '@typescript-eslint/no-unused-vars': [ 0 ],
+    '@typescript-eslint/no-explicit-any': [ 0 ],
+    complexity: [ 'error', { max: 50 } ],
     'no-multiple-empty-lines': [
       'error',
       {

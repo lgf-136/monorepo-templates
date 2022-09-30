@@ -1,0 +1,27 @@
+/* stylelint-disable selector-class-pattern */
+.FloatingMenus {
+  .floating-menu {
+    display: flex;
+    padding: 0.2rem;
+    background-color: rgb(237 233 233);
+    border-radius: 0.5rem;
+
+    button {
+      padding: 0.3rem;
+      margin: 0.2rem;
+
+      // color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: none;
+      border: none;
+      opacity: 0.6;
+
+      &:hover,
+      &.is-active {
+        background-color: #d2d1d1;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,7 +1,88 @@
-import React from 'react';
+/* eslint-disable react/display-name */
+import './index.scss';
+import { initContentWithHtml } from './initContent';
 
-export default function index() {
+import { EditorContent, useEditor } from '@tiptap/react';
+import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+import StarterKit from '@tiptap/starter-kit';
+import Document from '@tiptap/extension-document';
+import Paragraph from '@tiptap/extension-paragraph';
+import Text from '@tiptap/extension-text';
+import FontFamily from '@tiptap/extension-font-family';
+import { Color } from '@tiptap/extension-color';
+import History from '@tiptap/extension-history';
+import Highlight from '@tiptap/extension-highlight';
+import TextAlign from '@tiptap/extension-text-align';
+import TextStyle from '@tiptap/extension-text-style';
+import Code from '@tiptap/extension-code';
+import Typography from '@tiptap/extension-typography';
+import Dropcursor from '@tiptap/extension-dropcursor';
+import Link from '@tiptap/extension-link';
+import Underline from '@tiptap/extension-underline';
+import Image from '@tiptap/extension-image';
+import Table from '@tiptap/extension-table';
+import TableCell from '@tiptap/extension-table-cell';
+import TableHeader from '@tiptap/extension-table-header';
+import TableRow from '@tiptap/extension-table-row';
+import Mention from '@tiptap/extension-mention';
+import TaskItem from '@tiptap/extension-task-item';
+import TaskList from '@tiptap/extension-task-list';
+import Superscript from '@tiptap/extension-superscript';
+import Subscript from '@tiptap/extension-subscript';
+import CharacterCount from '@tiptap/extension-character-count';
+import React from 'react';
+import ToolBar from './ToolBar';
+import BubbleMenus from './BubbleMenu';
+import FloatingMenus from './FloatingMenu';
+
+const limit = 99999999999;
+export default () => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Document,
+      TaskList,
+      TaskItem.configure({
+        nested: true,
+      }),
+      Paragraph,
+      Text,
+      TextStyle,
+      FontFamily,
+      Color,
+      Superscript,
+      Subscript,
+      CharacterCount.configure({
+        limit,
+      }),
+      Link,
+      Underline,
+      Image,
+      Dropcursor,
+      TextAlign.configure({
+        types: [ 'heading', 'paragraph' ],
+      }),
+      // Highlight,
+      Highlight.configure({ multicolor: true }),
+      Code,
+      Typography,
+      Table.configure({
+        resizable: true,
+      }),
+      TableRow,
+      TableHeader,
+      // Default TableCell
+      TableCell,
+    ],
+    content: initContentWithHtml,
+  });
+
   return (
-    <div>index</div>
+    <div>
+      <BubbleMenus editor={editor}/>
+      <FloatingMenus editor={editor}/>
+      <ToolBar editor={editor} />
+      <EditorContent editor={editor} />
+    </div>
   );
-}
+};
