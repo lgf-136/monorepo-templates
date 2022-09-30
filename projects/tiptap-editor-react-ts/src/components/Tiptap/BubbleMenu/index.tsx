@@ -65,6 +65,7 @@ import {
   RiSuperscript,
   RiSubscript,
 } from 'react-icons/ri';
+import { LinkComponent } from '../LinkComponent';
 
 export default function BubbleMenus({ editor }: any) {
   if (!editor) {
@@ -89,7 +90,6 @@ export default function BubbleMenus({ editor }: any) {
             .toggleItalic()
             .run()}
           className={editor.isActive('italic') ? 'is-active' : ''}>
-          {/* <TextItalic theme='filled' size='16' fill='#000000' /> */}
           <RiItalic />
         </button>
         <button
@@ -97,7 +97,6 @@ export default function BubbleMenus({ editor }: any) {
             .toggleUnderline()
             .run()}
           className={editor.isActive('underline') ? 'is-active' : ''}>
-          {/* <TextUnderline theme='filled' size='16' fill='#000000' /> */}
           <RiUnderline />
         </button>
         <button
@@ -105,7 +104,6 @@ export default function BubbleMenus({ editor }: any) {
             .toggleStrike()
             .run()}
           className={editor.isActive('strike') ? 'is-active' : ''}>
-          {/* <TextUnderline theme='filled' size='16' fill='#000000' /> */}
           <RiStrikethrough />
         </button>
         <button
@@ -113,10 +111,8 @@ export default function BubbleMenus({ editor }: any) {
             .toggleHighlight()
             .run()}
           className={editor.isActive('highlight') ? 'is-active' : ''}>
-          {/* <HighLight theme='filled' size='16' fill='#000000' /> */}
           <RiBrushFill />
         </button>
-        {/* <AddHyperlink editor={editor} /> */}
         <button
           onClick={() => editor.chain().focus()
             .setTextAlign('left')
@@ -124,7 +120,6 @@ export default function BubbleMenus({ editor }: any) {
           className={
             editor.isActive({ textAlign: 'left' }) ? 'is-active' : ''
           }>
-          {/* <AlignTextLeft theme='filled' size='16' fill='#000000' /> */}
           <RiAlignLeft />
         </button>
         <button
@@ -136,7 +131,6 @@ export default function BubbleMenus({ editor }: any) {
           className={
             editor.isActive({ textAlign: 'center' }) ? 'is-active' : ''
           }>
-          {/* <AlignTextCenter theme='filled' size='16' fill='#000000' /> */}
           <RiAlignCenter />
         </button>
         <button
@@ -146,7 +140,6 @@ export default function BubbleMenus({ editor }: any) {
           className={
             editor.isActive({ textAlign: 'right' }) ? 'is-active' : ''
           }>
-          {/* <AlignTextRight theme='filled' size='16' fill='#000000' /> */}
           <RiAlignRight />
         </button>
         <button
@@ -158,9 +151,9 @@ export default function BubbleMenus({ editor }: any) {
           className={
             editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''
           }>
-          {/* <AlignTextBoth theme='filled' size='16' fill='#000000' /> */}
           <RiAlignJustify />
         </button>
+        <LinkComponent editor={editor}/>
       </BubbleMenu>
     </div>
   );

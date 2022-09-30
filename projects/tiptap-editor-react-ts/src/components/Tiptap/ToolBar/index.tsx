@@ -59,6 +59,8 @@ import {
   RiSuperscript,
   RiSubscript,
 } from 'react-icons/ri';
+import { LinkComponent } from '../LinkComponent';
+import { NetworkImage } from '../ImageComponent';
 
 export default function ToolBar({ editor }: any) {
   if (!editor) {
@@ -373,6 +375,8 @@ export default function ToolBar({ editor }: any) {
         disabled={!editor.can().toggleHeaderCell()}>
         <RiCellphoneFill />
       </button>
+      <LinkComponent editor={editor}/>
+      <NetworkImage editor={editor}/>
     </div>
   );
 }

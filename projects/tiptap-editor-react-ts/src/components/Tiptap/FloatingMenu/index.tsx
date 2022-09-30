@@ -65,6 +65,7 @@ import {
   RiSuperscript,
   RiSubscript,
 } from 'react-icons/ri';
+import { LinkComponent } from '../LinkComponent';
 
 export default function FloatingMenus({ editor }: any) {
   if (!editor) {
@@ -194,6 +195,7 @@ export default function FloatingMenus({ editor }: any) {
           {/* <InsertTable theme='filled' size='16' fill='#000000' /> */}
           <RiTable2 />
         </button>
+        <LinkComponent editor={editor}/>
       </FloatingMenu>
     </div>
   );
