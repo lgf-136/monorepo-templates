@@ -4,7 +4,6 @@
   ],
   "hints": {
     "disown-opener": "off",
-    "compat-api/css": "off",
-    "axe/forms": "off"
+    "compat-api/css": "off"
   }
 }
